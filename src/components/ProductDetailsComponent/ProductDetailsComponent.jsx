@@ -111,7 +111,7 @@ const ProductDetailsComponent = ({idProduct}) => {
         <Row style={{padding:'16px', background:'#fff',borderRadius:"4px"}}>
             <Col span={10} style={{ borderRight:"1px solid #e5e5e5",paddingRight:"8px"}}>
                 <Image src={productDetails?.image} alt="image product" preview={false}/>
-                <Row style={{paddingTop:"10px"}}>
+                {/* <Row style={{paddingTop:"10px"}}>
                     <WrapperStyleColImage span={4}>
                         <WrapperStyleImageSmall src={ImageProductSmall} alt="image small" preview={false} />
                     </WrapperStyleColImage>
@@ -124,7 +124,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                     <WrapperStyleColImage span={4}>
                         <WrapperStyleImageSmall src={ImageProductSmall} alt="image small" preview={false} />
                     </WrapperStyleColImage>
-                </Row>
+                </Row> */}
             </Col>
             <Col span={14} style={{paddingLeft:"10px"}}>
                 <WrapperStyleNameProduct>{productDetails?.name}</WrapperStyleNameProduct>

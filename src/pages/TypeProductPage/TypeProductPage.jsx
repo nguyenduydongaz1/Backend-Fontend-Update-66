@@ -34,8 +34,6 @@ const TypeProductPage = () => {
        }
     }
 
-
-
     useEffect(() => {
         if(state) {
             fetProductType(state, panigate.page, panigate.limit)
@@ -48,7 +46,7 @@ const TypeProductPage = () => {
     }
   return (
     <Loading isLoading={loading}>
-        <div style={{width:'100%', background:'#efefef', height: 'calc(100vh - 64px)'}}>
+        <div style={{width:'100%', background:'#efefef', height: 'auto'}}>
             <div style={{width:'1270px', margin:'0 auto', height:'100%'}}>
                 <Row style={{flexWrap:'nowrap',paddingTop:'10px',height:'calc(100% - 20px)'}}>
                     <WrapperNavbar span={4} >
@@ -59,7 +57,7 @@ const TypeProductPage = () => {
                             {product?.filter((pro) => {
                                 if(searchDebounce === '') {
                                     return pro
-                                }else if(pro?.name?.toLowerCase()?.includes(searchDebounce.toLowerCase())) {
+                                }else if(pro?.name?.toLowerCase()?.includes(searchDebounce?.toLowerCase())) {
                                     return pro
                                 }
                             })?.map((product) => {

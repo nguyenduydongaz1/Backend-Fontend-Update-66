@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { WrapperContent, WrapperLabelText, WrapperTextPrice, WrapperTextValue } from './style'
 import { Checkbox, Rate } from 'antd'
+import TypeProduct from '../TypeProduct/TypeProduct'
+import * as ProductService from '../../services/ProductService'
+
 
 const NavbarComponent = () => {
     const onChange = () => { }
+    const [typeProduct, setTypeProduct] = useState([])
     const renderContent = (type, options) => {
         switch(type) {
             case 'text':
@@ -43,11 +47,27 @@ const NavbarComponent = () => {
         }
     }
 
+    const fetchAllTypeProduct = async () => {
+    const res = await ProductService.getAllTypeProduct()
+    if(res?.status === 'OK'){
+      setTypeProduct(res?.data)
+    }
+  }
+
+  useEffect(() => {
+    fetchAllTypeProduct()
+  }, [])
+
   return (
     <div>
-      <WrapperLabelText> Label </WrapperLabelText>
+      <WrapperLabelText style={{marginLeft:'10px'}}> Thực đơn </WrapperLabelText>
         <WrapperContent>
-            {renderContent('text', ['Do An Vat', 'Do An', 'Food'])}
+        {typeProduct.map((item) => {
+            return (
+              <TypeProduct name={item} key={item} />
+            )
+          })}
+            {/* {renderContent('text', ['Do An Vat', 'Do An', 'Food'])} */}
         </WrapperContent>
     </div> 
   )

@@ -9,6 +9,7 @@ import * as UserService from '../../services/UserService'
 import { resetUser } from '../../redux/slides/userSlide'
 import Loading from '../LoadingComponent/Loading';
 import { searchProduct } from '../../redux/slides/ProductSlide';
+import Logo  from '../../assets/images/Logo.png'
 
 const HeaderComponent = ({isHiddenSearch = false, isHiddenCart = false}) => {
   const navigate = useNavigate()
@@ -73,10 +74,10 @@ const HeaderComponent = ({isHiddenSearch = false, isHiddenCart = false}) => {
   }
 
   return (
-    <div style={{width:'100%',background:'rgb(26, 148, 255)',display:'flex',justifyContent:'center'}}>
+    <div style={{width:'100%',background:'#202124',display:'flex',justifyContent:'center'}}>
       <WrapperHeader style={{justifyContent: isHiddenSearch && isHiddenSearch ? 'space-between' : 'unset'}}>
         <Col span={5}>
-         <WrapperTextHeader onClick={() => navigate('/')} style={{cursor:'pointer'}}>Food</WrapperTextHeader>
+         <WrapperTextHeader onClick={() => navigate('/')} style={{cursor:'pointer'}}><img src={Logo} width='100px' height='40px' /></WrapperTextHeader>
         </Col>
 
         {!isHiddenSearch && (

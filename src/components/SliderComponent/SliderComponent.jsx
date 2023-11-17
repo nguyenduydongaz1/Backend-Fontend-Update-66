@@ -16,7 +16,7 @@ const SliderComponent = ({arrImages}) => {
     <WrapperSliderStyle {...settings}>
         {arrImages.map((image) =>{//liên kết hình ảnh bên HomePage qua sliderComponent
             return (
-                <Image key={image} src={image} alt="slider" preview={false} width="100%" height="274px"/>//chỉnh tất cả hình ảnh lại cho gọn gàng
+                <Image key={image} src={image} alt="slider" preview={false} width="100%" height="400px"/>//chỉnh tất cả hình ảnh lại cho gọn gàng
             )
         })}
     </WrapperSliderStyle>

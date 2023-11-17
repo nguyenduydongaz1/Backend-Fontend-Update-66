@@ -2,7 +2,7 @@ import { Row } from "antd";
 import styled from "styled-components";
 
 export const WrapperHeader = styled(Row)`//bao gồm tất cả
-    background-color: rgb(26, 148, 255);
+    background-color: 202124;
     align-items: center;
     gap:16px;
     flex-wrap: nowrap;
